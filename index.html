@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="数据新闻长卷：人工智能如何定义与驱动中国新质生产力。包含滚动叙事、多视图联动、桑基图、平行坐标、旭日图等交互可视化。" />
+  <meta name="theme-color" content="#f4f7fc" />
+  <title data-i18n="docTitle">可视化导论 · 人工智能与新质生产力｜交互数据长卷</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a86a8'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23ffffff' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23ff9a5a'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./styles.css?v=3" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+  <header class="site-nav" id="siteNav">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <b data-i18n="brand">可视化导论</b>
+        <small data-i18n="brandSmall">AI × 新质生产力</small>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" data-i18n-label="navToggleLabel" aria-label="展开导航菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#concept" data-nav data-i18n="navConcept">概念</a>
+      <a href="#story" data-nav data-i18n="navStory">增长叙事</a>
+      <a href="#flow" data-nav data-i18n="navFlow">要素流动</a>
+      <a href="#atlas" data-nav data-i18n="navAtlas">区域联动</a>
+      <a href="#penetration" data-nav data-i18n="navPenetration">行业渗透</a>
+      <a href="#leap" data-nav data-i18n="navLeap">效率跃迁</a>
+      <a href="#graph" data-nav data-i18n="navGraph">技术图谱</a>
+      <button class="lang-toggle" id="langToggle" type="button" data-i18n="langBtn" data-i18n-label="langBtnLabel" aria-label="切换到英文">EN</button>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="eyebrow reveal" data-i18n="heroEyebrow">交互数据长卷 · INTERACTIVE DATA STORY</p>
+        <h1 class="reveal" data-i18n-html="heroTitle">人工智能，<br/>正在定义<span class="accent">新质生产力</span></h1>
+        <p class="hero-copy reveal" data-i18n="heroCopy">七年增长九倍的产业曲线、三十一个省份的梯度版图、四个行业里真实发生的效率跃迁——用多种可视化方法，拆解人工智能成为经济新动能的完整路径。</p>
+        <div class="hero-stats reveal" id="heroStats"></div>
+        <div class="hero-meta reveal"><span data-i18n="heroMeta">数据来源：公开权威报道 · 2024–2026　|　交互提示：图表均可悬停、点击、拖拽</span></div>
+      </div>
+      <a class="scroll-cue" href="#concept" data-i18n-label="scrollCueLabel" aria-label="向下滚动"><span class="scroll-cue-dot"></span></a>
+    </section>
+
+    <!-- ========== 01 概念 ========== -->
+    <section class="section concept-section" id="concept">
+      <div class="shell">
+        <p class="section-eyebrow reveal" data-i18n="s1Eyebrow">01 · 概念缘起</p>
+        <h2 class="reveal" data-i18n="s1Title">什么是“新质生产力”</h2>
+        <p class="section-lead reveal" data-i18n-html="s1Lead">“新质生产力”由创新驱动，以高科技、高效能、高质量为基本特征，摆脱传统增长路径。人工智能——由<strong>数据、算法、算力</strong>复合驱动——被官方多次明确为“形成新质生产力的重要引擎”。下面这条时间线，是它从一个概念走向国家行动的七个节点。</p>
+        <div class="timeline-wrap reveal">
+          <div class="timeline-axis" aria-hidden="true"></div>
+          <div class="timeline" id="timeline" role="list" data-i18n-label="s1TimelineLabel" aria-label="新质生产力政策大事记"></div>
+        </div>
+        <p class="timeline-hint reveal" data-i18n="s1Hint">← 横向滚动查看全部节点 →</p>
+      </div>
+    </section>
+
+    <!-- ========== 02 滚动叙事 ========== -->
+    <section class="section story-section" id="story">
+      <div class="shell">
+        <p class="section-eyebrow reveal" data-i18n="s2Eyebrow">02 · 增长叙事</p>
+        <h2 class="reveal" data-i18n="s2Title">一张图，五个视角</h2>
+        <p class="section-lead reveal" data-i18n-html="s2Lead">下面的图表会随着你的滚动<strong>自动变形</strong>——同一份数据，用五种不同的可视化方法依次回答五个问题。</p>
+      </div>
+
+      <div class="scrolly" id="scrolly">
+        <div class="scrolly-graphic">
+          <div class="scrolly-card">
+            <div class="viz-head">
+              <span class="viz-badge" id="storyBadge">柱状图</span>
+              <span class="viz-step" id="storyStepNum">1 / 5</span>
+            </div>
+            <div class="chart-box scrolly-chart" id="storyChart"></div>
+          </div>
+        </div>
+        <div class="scrolly-steps" id="scrollySteps"></div>
+      </div>
+    </section>
+
+    <!-- ========== 03 桑基图 ========== -->
+    <section class="section flow-section" id="flow">
+      <div class="shell">
+        <p class="section-eyebrow reveal" data-i18n="s3Eyebrow">03 · 要素流动</p>
+        <h2 class="reveal" data-i18n="s3Title">生产要素如何变成生产力</h2>
+        <p class="section-lead reveal" data-i18n-html="s3Lead">数据、算力、算法、人才四类要素，经由大模型、智能体、具身机器人等技术形态，流向各个行业，最终转化为效率、成本、质量与新岗位。<strong>连线的粗细代表流量大小。</strong></p>
+        <div class="chart-card reveal">
+          <div class="viz-head">
+            <span class="viz-badge" data-i18n="s3Badge">桑基图 Sankey · 流量宽度编码</span>
+            <span class="viz-read" data-i18n="s3Read">怎么读：悬停任一节点可高亮它的完整上下游路径</span>
+          </div>
+          <div class="chart-box sankey-box" id="sankeyChart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 04 多视图联动 ========== -->
+    <section class="section atlas-section" id="atlas">
+      <div class="shell">
+        <p class="section-eyebrow reveal" data-i18n="s4Eyebrow">04 · 区域联动</p>
+        <h2 class="reveal" data-i18n="s4Title">四张图，一个联动的产业版图</h2>
+        <p class="section-lead reveal" data-i18n-html="s4Lead">下面四张图<strong>共享同一份选择状态</strong>：在任意一张图里点击或刷选，其余三张会同步响应。这是可视化中的经典方法——<em>多视图联动（Brushing &amp; Linking）</em>。</p>
+
+        <div class="controls reveal" id="atlasControls">
+          <div class="control-group">
+            <label for="yearSlider" data-i18n="ctrlYear">年份</label>
+            <input type="range" id="yearSlider" min="0" max="6" value="6" step="1" />
+            <output id="yearOut">2025</output>
+            <button class="ctrl-btn" id="playBtn" type="button" data-i18n-label="ctrlPlayLabel" aria-label="播放年度动画">▶ 播放</button>
+          </div>
+          <div class="control-group region-group" id="regionGroup" role="group" aria-label="按区域筛选"></div>
+          <button class="ctrl-btn ghost" id="resetBtn" type="button" data-i18n="ctrlReset">重置筛选</button>
+        </div>
+        <p class="filter-status" id="filterStatus" aria-live="polite">当前：全部 31 个省份</p>
+
+        <div class="atlas-row-1">
+          <div class="chart-card reveal">
+            <div class="viz-head">
+              <span class="viz-badge" data-i18n="mapBadge">分级统计地图 Choropleth · 颜色明度编码</span>
+              <span class="viz-read" data-i18n="mapRead">点击省份选中；拖拽/滚轮可平移缩放</span>
+            </div>
+            <div class="chart-box map-box" id="mapChart"></div>
+          </div>
+          <div class="chart-card reveal">
+            <div class="viz-head">
+              <span class="viz-badge" data-i18n="rankBadge">排序条形图 · 长度编码</span>
+            </div>
+            <div class="chart-box rank-box" id="rankChart"></div>
+          </div>
+        </div>
+
+        <div class="chart-card reveal full-card">
+          <div class="viz-head">
+            <span class="viz-badge" data-i18n="parallelBadge">平行坐标图 Parallel Coordinates · 六维同屏</span>
+            <span class="viz-read" data-i18n-html="parallelRead">在任意一根轴上<strong>按住拖拽</strong>可刷选区间，其余视图会同步过滤</span>
+          </div>
+          <div class="chart-box parallel-box" id="parallelChart"></div>
+          <p class="insight-note" id="parallelInsight" data-i18n-html="parallelInsight">
+            💡 试试在「算力」轴上刷选高值区间——你会发现内蒙古、宁夏、贵州、甘肃这些产业规模不大的省份算力却很高，这正是<strong>“东数西算”</strong>国家工程的空间体现。
+          </p>
+        </div>
+
+        <div class="atlas-row-3">
+          <div class="chart-card reveal">
+            <div class="viz-head">
+              <span class="viz-badge" data-i18n="scatterBadge">气泡散点图 · 位置+面积+颜色三重编码</span>
+              <span class="viz-read" data-i18n="scatterRead">X=规模(对数) · Y=增速 · 气泡大小=企业数 · 颜色=区域</span>
+            </div>
+            <div class="chart-box scatter-box" id="scatterChart"></div>
+          </div>
+          <div class="chart-card detail-card reveal" id="detailCard">
+            <div class="viz-head"><span class="viz-badge" data-i18n="detailBadge">选中省份详情 · 雷达图</span></div>
+            <div id="detailBody"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 05 旭日图 ========== -->
+    <section class="section penetration-section" id="penetration">
+      <div class="shell">
+        <p class="section-eyebrow reveal" data-i18n="s5Eyebrow">05 · 行业渗透</p>
+        <h2 class="reveal" data-i18n="s5Title">AI 具体渗透到了哪些场景</h2>
+        <p class="section-lead reveal" data-i18n-html="s5Lead">五个行业、十九个细分场景。<strong>点击任意扇区可下钻</strong>，点击中心可返回上一层。</p>
+        <div class="penetration-layout">
+          <div class="chart-card reveal">
+            <div class="viz-head">
+              <span class="viz-badge" data-i18n="sunburstBadge">旭日图 Sunburst · 层级+角度编码</span>
+              <span class="viz-read" data-i18n="sunburstRead">内圈为行业，外圈为细分场景；扇区角度代表相对渗透强度</span>
+            </div>
+            <div class="chart-box sunburst-box" id="sunburstChart"></div>
+          </div>
+          <aside class="scene-panel reveal" id="scenePanel"></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 06 斜率图 ========== -->
+    <section class="section leap-section" id="leap">
+      <div class="shell">
+        <p class="section-eyebrow reveal" data-i18n="s6Eyebrow">06 · 效率跃迁</p>
+        <h2 class="reveal" data-i18n="s6Title">八项任务，应用 AI 前后的落差</h2>
+        <p class="section-lead reveal" data-i18n-html="s6Lead">把八项真实任务的耗时/成本统一归一化为指数（应用前 = 100），用<strong>斜率图</strong>呈现。线越陡，效率提升越剧烈。</p>
+        <div class="chart-card reveal">
+          <div class="viz-head">
+            <span class="viz-badge" data-i18n="slopeBadge">斜率图 Slope Chart · 斜率编码变化幅度</span>
+            <span class="viz-read" data-i18n="slopeRead">左端=应用前，右端=应用后；悬停查看真实数值</span>
+          </div>
+          <div class="chart-box slope-box" id="slopeChart"></div>
+          <p class="insight-note" data-i18n-html="slopeInsight">💡 注意纵轴是<strong>对数刻度</strong>——若用线性刻度，“43天→10小时”这类百倍级的改善会把其余所有线压成一条直线，这是可视化中刻度选择影响可读性的典型例子。</p>
+        </div>
+
+        <div class="industry-grid" id="industryGrid"></div>
+      </div>
+    </section>
+
+    <!-- ========== 07 技术图谱 ========== -->
+    <section class="section graph-section" id="graph">
+      <div class="shell">
+        <p class="section-eyebrow reveal" data-i18n="s7Eyebrow">07 · 技术图谱</p>
+        <h2 class="reveal" data-i18n="s7Title">从要素到新质生产力的完整路径</h2>
+        <p class="section-lead reveal" data-i18n-html="s7Lead">一张有向关系网络。<strong>可拖拽节点、可搜索高亮</strong>，观察任一节点的上下游连接。</p>
+        <div class="chart-card reveal">
+          <div class="viz-head">
+            <span class="viz-badge" data-i18n="graphBadge">力导向图 Force-directed Graph · 拓扑关系</span>
+            <div class="graph-search">
+              <input type="search" id="graphSearch" data-i18n-placeholder="graphSearchPlaceholder" data-i18n-label="graphSearchLabel" placeholder="搜索节点，如：大模型" aria-label="搜索图谱节点" />
+            </div>
+          </div>
+          <div class="chart-box graph-box" id="graphChart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 08 展望 ========== -->
+    <section class="section outlook-section" id="outlook">
+      <div class="shell outlook-shell">
+        <p class="section-eyebrow reveal" data-i18n="s8Eyebrow">08 · 展望</p>
+        <h2 class="reveal" data-i18n="s8Title">从 1.2 万亿，到 10 万亿</h2>
+        <p class="section-lead reveal" data-i18n="s8Lead">按“十五五”产业展望，AI 核心产业规模有望在 2030 年前后增长至 10 万亿元以上。</p>
+        <div class="outlook-bar reveal" id="outlookBar">
+          <div class="outlook-track"><div class="outlook-fill" id="outlookFill"></div></div>
+          <div class="outlook-labels">
+            <span id="outlookNow">2025 · 1.2万亿元</span>
+            <span id="outlookTarget">2030目标 · 10万亿元</span>
+          </div>
+        </div>
+        <p class="outlook-closing reveal" data-i18n="outlookClosing">人工智能不只是一项技术，而是一种正在重写生产函数的新型要素组合方式——这正是“新质”二字的分量。</p>
+      </div>
+    </section>
+
+    <!-- ========== 页脚 ========== -->
+    <footer class="site-footer">
+      <div class="shell footer-shell">
+        <div class="footer-top">
+          <div>
+            <b data-i18n="footBrand">可视化导论 · AI × 新质生产力</b>
+            <p data-i18n="footSub">《可视化导论》课程作业 · 交互数据长卷 · 2026</p>
+          </div>
+          <a class="back-top" href="#top" data-i18n="backTop">返回顶部 ↑</a>
+        </div>
+
+        <details class="disclosure">
+          <summary id="methodSummary">本站使用的可视化方法</summary>
+          <div class="method-grid" id="methodGrid"></div>
+        </details>
+
+        <details class="disclosure">
+          <summary id="sourceSummary" data-i18n="sourceSummary">数据来源与口径说明</summary>
+          <p class="data-note" id="dataNote"></p>
+          <ol id="sourceList"></ol>
+        </details>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="./assets/vendor/echarts.min.js"></script>
+  <script src="./assets/data/i18n.js?v=1"></script>
+  <script src="./assets/data/content.js?v=3"></script>
+  <script src="./app.js?v=3"></script>
+</body>
+</html>
